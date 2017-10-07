@@ -8,10 +8,9 @@
 
 <h2>Your Appointments</h2>
 <%@appointments.each do |appointment|%>
-<h3><a href="/appointments/<%=appointment.id%>/edit"><%=appointment.name%></a></h3>
-<%=appointment.month%>,
-<%=appointment.date%>,
-<%=appointment.year%>
+<h3><a href="/appointments/<%=appointment.id%>/edit"><%=appointment.title%></a></h3>
+<%=appointment.location%>,
+<%=appointment.date%>
 
 
 

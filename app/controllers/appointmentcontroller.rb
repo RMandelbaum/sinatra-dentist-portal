@@ -26,8 +26,8 @@ class AppointmentController < ApplicationController
 
       post '/appointments' do
         @user = current_user
-        @appointment = Appointment.new(name: params[:name], month: params[:month], date: params[:date], year: params[:year], user_id: @user.id)
-        if @appointment.name.empty? && @appointment.month.empty? && @appointment.date.empty? && @appointment.year.empty?
+        @appointment = Appointment.new(title: params[:title], location: params[:location], date: params[:date], user_id: @user.id)
+        if @appointment.title.empty? || @appointment.location.empty? || @appointment.date.empty?
           redirect '/appointments/new'
         end
         if @appointment.save
@@ -60,10 +60,10 @@ end
     patch '/appointments/:id' do
       @appointment = Appointment.find_by_id(params[:id])
 
-      if params[:name].empty? || params[:month].empty? || params[:date].empty? || params[:year].empty?
+      if params[:title].empty? || params[:location].empty? || params[:date].empty?
         redirect to "/appointments/#{@appointment.id}/edit"
       elsif is_logged_in? && @appointment.user == current_user
-        @appointment.update(name: params[:name], month: params[:month], date: params[:date], year: params[:year])
+        @appointment.update(title: params[:title], location: params[:location], date: params[:date])
 
        redirect '/appointments'
      else
