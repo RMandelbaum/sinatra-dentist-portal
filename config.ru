@@ -6,5 +6,6 @@ end
 
 use Rack::MethodOverride
 
-
+use FormController
+use PatientController
 run ApplicationController

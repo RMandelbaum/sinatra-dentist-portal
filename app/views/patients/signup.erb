@@ -1,0 +1,14 @@
+<h1>Sign Up</h1>
+
+<form action="/patients/signup" method="post">
+  Username:<input type="text" name="username">
+  Email <input type="email" name="email">
+  Password <input type="password" name="password">
+  <br><br>
+  <!-- Please Choose your Dentist:
+  <%@dentists.all.each do |dentist| %>
+  <input type="checkbox" name="dentist_name" value ="<%=dentist.id%>"><%=dentist.name%></input>
+  <%end%> -->
+
+  <input type="submit" name="submit">
+</form>
