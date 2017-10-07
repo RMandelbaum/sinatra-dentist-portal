@@ -1,9 +1,6 @@
-class Patient < ActiveRecord::Base
+class User < ActiveRecord::Base
   has_secure_password
-
-  belongs_to :doctor
-  has_many :forms
-
+  has_many :appointments
   validates :username, presence: true
 
   def slug
@@ -11,7 +8,7 @@ class Patient < ActiveRecord::Base
   end
 
  def self.find_by_slug(slug)
-   Patient.all.find{|patient| patient.slug == slug}
+   User.all.find{|user| user.slug == slug}
  end
 
  end

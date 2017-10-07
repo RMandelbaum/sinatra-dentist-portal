@@ -12,21 +12,18 @@
 
 ActiveRecord::Schema.define(version: 20171007181629) do
 
-  create_table "dentists", force: :cascade do |t|
+  create_table "appointments", force: :cascade do |t|
     t.string "name"
+    t.string "month"
+    t.integer "date"
+    t.integer "year"
+    t.integer "user_id"
   end
 
-  create_table "forms", force: :cascade do |t|
-    t.string "name"
-    t.string "content"
-    t.integer "patient_id"
-  end
-
-  create_table "patients", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email"
     t.string "password_digest"
-    t.integer "dentist_id"
   end
 
 end

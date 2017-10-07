@@ -53,3 +53,11 @@ www.dentistData.com/patients/:slug/form/:id/edit
   delete /patients/:slug/form/:id
 
   deletes it
+
+  -------------------------------------------------
+  tasks to complete
+  1. Scheduled dental appointment
+  2. Schedules Doctor appointments
+
+  on show page
+  dispaly time.now - sheduled appoints... countdown 
