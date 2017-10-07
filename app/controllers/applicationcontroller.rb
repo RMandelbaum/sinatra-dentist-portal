@@ -13,7 +13,7 @@ class ApplicationController < Sinatra::Base
 
 
     def current_user
-      @patient = Patient.find_by_id(session[:user_id])
+      @user = User.find_by_id(session[:user_id])
 
     end
 

@@ -1,1 +1,22 @@
-List of Forms
+<button><a href="/appointments/new">Create New Appointments</a></button>
+<button><a href="/users/<%=@user.slug%>/logout">Logout</a></button>
+
+<h1>Welcome <%=@user.username%></h1>
+<h2>Please Brush your teeth at <%=@time%></h2>
+
+
+
+<h2>Your Appointments</h2>
+<%@appointments.each do |appointment|%>
+<h3><a href="/appointments/<%=appointment.id%>/edit"><%=appointment.name%></a></h3>
+<%=appointment.month%>,
+<%=appointment.date%>,
+<%=appointment.year%>
+
+
+
+<form action ="/appointments/<%=appointment.id%>" method="post">
+<input id = "hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" name="Delete Appointment" value="Delete Appointment">
+
+  <%end%>

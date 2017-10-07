@@ -1,0 +1,20 @@
+
+<h1>Your current Appointment is:</h1>
+<h2><%=@appointment.name%> on
+<%=@appointment.month%>, <%=@appointment.date%>, <%=@appointment.year%>
+<h1>Edit</h1>
+<form action ="/appointments/<%=@appointment.id%>" method="post">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+
+  <h3>Name: <input type = "text" name="name"></h3>
+
+  Month:  <input type="text" name="month">
+  <br>
+  <br>
+  Date:  <input type="text" name="date">
+  <br>
+  <br>
+  Year: <input type="text" name="year">
+  <br>
+  <br>
+  <input type="submit" value="submit">
