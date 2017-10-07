@@ -1,0 +1,55 @@
+class Patient
+belongs to dentist
+has many forms
+
+class dentist
+has many patients
+
+class forms
+belongs to patient
+
+www.dental.com/
+erb :home
+
+www.Dental.com/signup
+on sign up choose your dentist
+
+www.Dental.com/login
+
+directs to
+
+www.dentistData.com/home
+
+  index page --where form will be filled out with info
+  List of Forms
+  1.form1 --link to each form show page
+  2.form 2 --link to each form page
+  3. form 3 --link to each form page
+
+
+  link to logout --logout
+
+  www.dentistData.com/patients/:slug/new_form
+   fills out forms with name already filled in???
+   inputs data age, weight, height
+
+   posts to .com/username (the show page)
+
+
+www.dentistData.com/patients/:slug/form/:id
+
+  show page --forms will be posted to here
+
+  optional delete button
+  link to fill out form --new
+  link to edit form  --edit
+
+www.dentistData.com/patients/:slug/form/:id/edit
+
+  edit each form
+
+  posts to form/:id
+
+  delete /patients/:slug/form/:id
+
+  deletes it
